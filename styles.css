@@ -1,1 +1,64 @@
 /*Maak hier jouw CSS!*/
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 50px 190px 100px auto 50px;
+    grid-template-areas:
+        "header-item aside-large aside-large"
+        "main aside-large aside-large"
+        "main aside-medium aside-small"
+        "main aside-medium aside-small"
+        "footer-item footer-item footer-item";
+    row-gap: 16px;
+    column-gap: 16px;
+}
+
+.grid-item {
+    padding: 8px;
+    color: white;
+
+}
+
+#header-item  {
+    background: hsl(9, 100%, 44%);
+    grid-area: header-item;
+}
+
+#main {
+    background: #F26757;
+    grid-area: main;
+}
+
+#aside-large {
+    background: #703028 ;
+    grid-area: aside-large;
+}
+
+#aside-medium {
+    background: hsl(9, 100%, 44%);
+    grid-area: aside-medium;
+}
+#aside-small {
+    background: #701107;
+    grid-area: aside-small;
+}
+#footer-item {
+    background: #BD1D0B;
+    grid-area: footer-item;
+}
+
+@media screen and (max-width: 576px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 50px auto 50px 50px 50px 50px 50px;
+        grid-template-areas:
+            "header-item"
+            "main"
+            "aside-large"
+            "aside-small"
+            "aside-medium"
+            "."
+            "footer-item"
+    }
+}
